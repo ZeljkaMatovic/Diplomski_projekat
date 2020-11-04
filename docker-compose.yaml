@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+
+  rentacar-service:
+    image: rentacar
+    container_name: rentacarcontainer
+    build:
+      context: ./Rentacar_backend
+      dockerfile: Dockerfile
+    ports:
+    - 40000:40000
+    
+  airline-service:
+    image: airline
+    container_name: airlinecontainer
+    build:
+      context: ./Airline_backend
+      dockerfile: Dockerfile
+    ports:
+    - 40001:40001
+  chat-service:
+    image: chatapp
+    container_name: chatcontainer
+    build:
+      context: ./Chat_backend
+      dockerfile: Dockerfile
+    ports:
+    - 44391:44391
